@@ -1,4 +1,4 @@
-package algestudiante.p0;
+package Math;
 
 import static org.junit.Assert.assertEquals;
 
