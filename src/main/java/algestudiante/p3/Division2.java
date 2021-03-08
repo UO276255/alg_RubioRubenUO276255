@@ -30,7 +30,7 @@ public class Division2
 		long t1,t2,cont;
 		int nVeces= Integer.parseInt (arg [0]);
 		boolean b=true;
-		for (int n=1;n<=10000000;n*=2)
+		for (int n=100;n<=10000000;n*=2)
 		{
 			t1 = System.currentTimeMillis ();
 
@@ -42,7 +42,7 @@ public class Division2
 
 			t2 = System.currentTimeMillis ();
 
-			System.out.println(b+" n="+n+ "**TIEMPO="+(t2-t1)+"**nVeces="+nVeces);
+			System.out.println(b+" n="+n+ "**TIEMPO="+(float)(t2-t1)/nVeces+"**nVeces="+nVeces);
 		}  // for
 	} // main
 } //class

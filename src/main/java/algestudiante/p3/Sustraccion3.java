@@ -1,14 +1,14 @@
 package algestudiante.p3;
 
-/*
+/**
 	Es un m�todo recursivo POR SUSTRACCION
-	T(n)= 2 T(n-1) + O(1)
 	Los par�metros son: a=2; b=1; k=0
 	Luego la complejidad temporal es exponencial O(2^n)
 	y la complejidad MPILA es O(n), pero no se desborda
 	porque mucho antes el tiempo de ejecuci�n se hace 
 	intratable
  */
+
 public class Sustraccion3
 {
 
@@ -24,7 +24,7 @@ public class Sustraccion3
 			rec3 (n-1);
 			rec3 (n-1);
 		}
-		return true;   
+		return true;  
 	}
 
 	@SuppressWarnings("unused")

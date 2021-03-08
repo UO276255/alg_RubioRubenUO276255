@@ -28,7 +28,6 @@ public class Bucle4 {
 			t2 = System.currentTimeMillis();
 
 			System.out.println(n+"\t"+(float)(t2-t1)/nVeces+"\t"+c);
-
 		}
 	} 
 }
