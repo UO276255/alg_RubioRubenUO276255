@@ -14,30 +14,32 @@ public class InversionesTiempos {
 	public static void main(String args[]) { 
 		int numberFiles = 7;
 		
-		//we don't take times for the first execution since first execution is usually slower than normal
+		// No tomamos tiempos de la primera ejecución ya que la primera ejecución es más lenta de lo normal
 		for (int i = 1; i <= numberFiles; i++) {
-			//Check if the path is correct for you
-			String fileName = Paths.get("").toAbsolutePath().toString() + "/src/main/java/alg77777777/p32/ranking" + i + ".txt";
-			System.out.println("FILE: " + fileName);
+			// Comprueba si es correcto para los nombres de paquetes empleados en tu proyecto
+			String fileName = Paths.get("").toAbsolutePath().toString() + "/src/main/java/algestudiante/p32/ranking"+i+".txt";
+			System.out.println("Fichero: " + fileName);
 			
+			// Algoritmo DV
 			ranking = readRankingFromFile(fileName);
 	        Inversiones inv1 = new Inversiones(ranking);	
 	        long  t1 = System.currentTimeMillis();              
-	        System.out.println("Number of inversions = " + inv1.start());                 				
+	        System.out.println("Número de inversiones = " + inv1.start());                 				
 	        long  t2 = System.currentTimeMillis();              
-	        if(i>1) System.out.println("The time for the algorithm O(n logn) is: " + (t2-t1) + " milliseconds");
+	        if(i>=1) 
+	        System.out.println("El tiempo para el algoritmo DV es: " + (t2-t1) + " milisegundos");
 	        
-	        //Fork/join Framework
+	        // Algoritmo iterativo
 	        ranking = readRankingFromFile(fileName);
 	        InversionesCuadratico inv2 = new InversionesCuadratico(ranking);	
 	        t1 = System.currentTimeMillis();              
-	        System.out.println("Number of inversions = " + inv2.start());                 				
+	        System.out.println("Número de inversiones = " + inv2.start());                 				
 	        t2 = System.currentTimeMillis();              
-	        if(i>1)  System.out.println("The time for the algorithm O(n^2) is: " + (t2-t1) + " milliseconds");
+	        if(i>=1)  
+	        System.out.println("El tiempo para el algortimo iterativo es: " + (t2-t1) + " milisegundos");
 
 	        System.out.println("\n****************************\n");
-		}	
-
+		}
 	}
 	
 	public static List<Integer> readRankingFromFile(String file)
@@ -47,23 +49,23 @@ public class InversionesTiempos {
 		List<Integer> elements = new ArrayList<Integer>();
 
 		try {
-			//we open the file
+			// abrimos el fichero
 			fich = new BufferedReader(new FileReader(file));
-			line = fich.readLine(); //first element of the file
+			line = fich.readLine(); // Primer elemento del fichero
 			while (line != null) {
 				elements.add(Integer.parseInt(line));
 				line = fich.readLine();
 			}
 		} catch (FileNotFoundException e) {
-			System.out.println("There is no file: "+file);
+			System.out.println("No existe el fichero: "+file);
 		} catch (IOException e) {
-			System.out.println("Error reading the file: "+file);
+			System.out.println("Error leyendo el fichero: "+file);
 		} finally {
 			if (fich!=null)
 				try {
 					fich.close();
 				} catch (IOException e) {
-					System.out.println("Error closing the file: "+file);
+					System.out.println("Error cerrando el fichero: "+file);
 					e.printStackTrace();
 				}
 		}
