@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Inversiones {
 	public List<Integer> ranking;
+	public static int count = 0;
 
 	public Inversiones(List<Integer> ranking) {
 		this.ranking = ranking;
@@ -12,7 +13,7 @@ public class Inversiones {
 
 	public String start() {
 		Mergesort(ranking,0,ranking.size()-1);
-		   return "Logaritmica";
+		   return " "+ count;
 	}
 
 	public static void Mergesort(List<Integer> ranking,int izq, int der){
@@ -20,7 +21,8 @@ public class Inversiones {
 	            int m=(izq+der)/2;
 	            Mergesort(ranking,izq,m);
 	            Mergesort(ranking,m+1, der);                                                                                
-	            sort(ranking,izq, m, der);                                                                                 
+	            sort(ranking,izq, m, der);
+	            count = count +1;
 	    }
 	}
 	
