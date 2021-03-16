@@ -20,23 +20,20 @@ public class Inversiones {
 	            int m=(izq+der)/2;
 	            Mergesort(ranking,izq,m);
 	            Mergesort(ranking,m+1, der);                                                                                
-	            merge(ranking,izq, m, der);                                                                                 
+	            sort(ranking,izq, m, der);                                                                                 
 	    }
 	}
 	
-	public static void merge(List<Integer> A,int izq, int m, int der){
+	public static void sort(List<Integer> A,int izq, int m, int der){
 		   int i, j, k;
-		   List<Integer> B = new ArrayList<Integer>(A); //array auxiliar
-
-		   i=izq; j=m+1; k=izq;
-		     
-		   while (i<=m && j<=der) //copia el siguiente elemento más grande                                      
+		   List<Integer> B = new ArrayList<Integer>(A);
+		   i=izq; j=m+1; k=izq;     
+		   while (i<=m && j<=der)                                  
 		          if (B.get(i)<=B.get(j))
 		              A.set(k++,B.get(i++));
 		          else
-		        	  A.set(k++,B.get(j++));
-		        
-		   while (i<=m)         //copia los elementos que quedan de la
-			   A.set(k++,B.get(i++)); //primera mitad (si los hay)
+		        	  A.set(k++,B.get(j++));	        
+		   while (i<=m)        
+			   A.set(k++,B.get(i++));
 		}
 }
