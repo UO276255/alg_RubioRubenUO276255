@@ -1,6 +1,6 @@
 package algestudiante.p6;
 
-public class MainMejorLista {
+public class MejorListaTiempos {
 
 	public static void main(String[] args) {
 		for(int i = 5 ; i < 31 ; i+=5) {			
