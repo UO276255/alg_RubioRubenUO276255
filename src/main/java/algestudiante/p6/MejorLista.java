@@ -15,6 +15,13 @@ public class MejorLista {
 	private int puntuacionActual;
 	private int mejorPuntuacion;
 
+	public static void main(String[] args) {
+        //int nveces=Integer.parseInt(args[0]);
+        MejorLista mj= new MejorLista("src/main/java/algestudiante/p6/Lista01.txt", 10);
+        mj.backtracking(0);
+        mj.printTimeForamt();
+    }
+	
 	public MejorLista(String fileName, int minsPerBlock) {
 		this.tiempoBloque = minsPerBlock * 60;
 		canciones = readFile(fileName);
